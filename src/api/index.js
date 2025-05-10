@@ -1,8 +1,8 @@
 const { Router } = require('express');
-const routerExample = require('./routers/router-example');
+const userRouter = require('./routers/user');
 
 module.exports = (app) => {
   const router = Router();
-  router.use('/example-controller-path', routerExample);
+  router.use('/user', userRouter);
   app.use('/api', router);
 };
