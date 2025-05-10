@@ -1,10 +1,15 @@
-module.exports = ({ logger }) => ({
+module.exports = ({ logger, errorHandler }) => ({
   health: async (req, res, next) => {
     try {
-      res.json({ status: 'ok' });
-    } catch (err) {
-      logger.error(err)
-      res.status(500).json({ error: 'Internal Server Error' });
+      res.json({ status: "ok" });
+    } catch (error) {
+      next(
+        errorHandler.generateError(
+          error,
+          "Internal Server Error - TEST TEST TEST",
+          200
+        )
+      );
     }
-  }
+  },
 });

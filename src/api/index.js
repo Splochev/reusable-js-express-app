@@ -1,8 +1,8 @@
 const { Router } = require('express');
-const ethereumRouter = require('./routers/ethereum');
+const routerExample = require('./routers/router-example');
 
 module.exports = (app) => {
   const router = Router();
-  router.use('/ethereum', ethereumRouter);
+  router.use('/ethereum', routerExample);
   app.use('/api', router);
 };
