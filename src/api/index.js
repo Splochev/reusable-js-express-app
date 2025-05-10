@@ -3,6 +3,6 @@ const routerExample = require('./routers/router-example');
 
 module.exports = (app) => {
   const router = Router();
-  router.use('/ethereum', routerExample);
+  router.use('/example-controller-path', routerExample);
   app.use('/api', router);
 };
